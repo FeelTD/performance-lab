@@ -15,8 +15,9 @@ def replace_item(obj, key, dict_pairs):
     return obj
 
 
-values_path = sys.argv[1]  # не забыть убрать
+values_path = sys.argv[1]
 tests_path = sys.argv[2]
+results_path = sys.argv[3]
 
 with open(values_path, 'r') as file:
     values_data = json.load(file)
@@ -32,5 +33,5 @@ replace_item(tests_data, 'value', id_value_pairs)
 print(tests_data)
 
 json_res = json.dumps(tests_data, indent=4)
-with open("report.json", "w") as outfile:
+with open(results_path, "w") as outfile:
     outfile.write(json_res)
