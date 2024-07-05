@@ -1,3 +1,5 @@
+import sys
+
 def point(coord_x, coord_y, r, dot_x, dot_y):
     dist = ((coord_x-dot_x)**2+(coord_y-dot_y)**2)**(1/2)
     if (dist < r):
@@ -8,8 +10,8 @@ def point(coord_x, coord_y, r, dot_x, dot_y):
         return 2
 
 
-file1_path = input("Введите путь к файлу 1")
-file2_path = input("Введите путь к файлу 2")
+file1_path = sys.argv[1]
+file2_path = sys.argv[2]
 file1 = open(file1_path, 'r')
 file2 = open(file2_path, 'r')
 
