@@ -1,6 +1,6 @@
 import json
 import pandas as pd
-
+import sys
 
 def replace_item(obj, key, dict_pairs):
     for k, v in obj.items():
@@ -15,8 +15,8 @@ def replace_item(obj, key, dict_pairs):
     return obj
 
 
-values_path = input("Введите путь к файлу values.json")  # не забыть убрать
-tests_path = input("Введите путь к файлу tests.json")
+values_path = sys.argv[1]  # не забыть убрать
+tests_path = sys.argv[2]
 
 with open(values_path, 'r') as file:
     values_data = json.load(file)
